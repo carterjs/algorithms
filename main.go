@@ -25,9 +25,9 @@ func main() {
 	mergeSortPoints := make(plotter.XYs, 10)
 
 	// Run the algorithms
-	for i := 0; i < 10; i++ {
-		var start time.Time
+	start := time.Now()
 
+	for i := 0; i < 10; i++ {
 		nums := rand.Perm(i + 1)
 
 		// Insertion sort

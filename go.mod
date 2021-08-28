@@ -2,6 +2,8 @@ module github.com/carterjs/algorithms
 
 go 1.17
 
+require gonum.org/v1/plot v0.9.0
+
 require (
 	github.com/ajstarks/svgo v0.0.0-20180226025133-644b8db467af // indirect
 	github.com/fogleman/gg v1.3.0 // indirect
@@ -11,5 +13,4 @@ require (
 	github.com/phpdave11/gofpdf v1.4.2 // indirect
 	golang.org/x/image v0.0.0-20210216034530-4410531fe030 // indirect
 	golang.org/x/text v0.3.5 // indirect
-	gonum.org/v1/plot v0.9.0 // indirect
 )
