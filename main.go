@@ -16,8 +16,8 @@ func main() {
 	p := plot.New()
 
 	// Setup
-	p.Title.Text = "runtime vs # of sorted elements"
-	p.X.Label.Text = "# of sorted elements"
+	p.Title.Text = "runtime vs # of elements"
+	p.X.Label.Text = "# of elements"
 	p.Y.Label.Text = "execution time (nanoseconds)"
 
 	// store points
