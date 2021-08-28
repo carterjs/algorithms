@@ -1,7 +1,7 @@
 package insertionSort
 
-// Exec runs the insertion sort algorithm on the input array and returns a sorted array
-func Exec(a []int) []int {
+// Sort runs the insertion sort algorithm on the input array and returns a sorted array
+func Sort(a []int) []int {
 	// Make a copy of the slice
 	r := make([]int, len(a))
 	copy(r, a)
