@@ -21,30 +21,33 @@ func main() {
 	p.Y.Label.Text = "execution time (nanoseconds)"
 
 	// store points
-	insertionSortPoints := make(plotter.XYs, 10)
-	mergeSortPoints := make(plotter.XYs, 10)
+	insertionSortPoints := make(plotter.XYs, 50)
+	mergeSortPoints := make(plotter.XYs, 50)
 
 	// Run the algorithms
 	start := time.Now()
 
-	for i := 0; i < 10; i++ {
-		nums := rand.Perm(i + 1)
+	for i := 0; i < 50; i++ {
+		nums := rand.Perm((i + 1) * 50)
 
 		// Insertion sort
 		start = time.Now()
 		insertionSort.Sort(nums)
-		insertionSortPoints[i].X = float64(i + 1)
+		insertionSortPoints[i].X = float64((i + 1) * 50)
 		insertionSortPoints[i].Y = float64(time.Since(start).Nanoseconds())
 
 		// Merge sort
 		start = time.Now()
 		mergeSort.Sort(nums)
-		mergeSortPoints[i].X = float64(i + 1)
+		mergeSortPoints[i].X = float64((i + 1) * 50)
 		mergeSortPoints[i].Y = float64(time.Since(start).Nanoseconds())
 	}
 
 	// Draw the lines
-	plotutil.AddLinePoints(p, "Insertion Sort", insertionSortPoints, "Merge Sort", mergeSortPoints)
+	err := plotutil.AddLinePoints(p, "Insertion Sort", insertionSortPoints, "Merge Sort", mergeSortPoints)
+	if err != nil {
+		return
+	}
 
 	if err := p.Save(6*vg.Inch, 4*vg.Inch, "graph.png"); err != nil {
 		log.Panicf("Failed to save graph: %v", err)
