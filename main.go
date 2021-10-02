@@ -28,18 +28,18 @@ func main() {
 	start := time.Now()
 
 	for i := 0; i < 50; i++ {
-		nums := rand.Perm((i + 1) * 50)
+		nums := rand.Perm(i + 1)
 
 		// Insertion sort
 		start = time.Now()
 		insertionSort.Sort(nums)
-		insertionSortPoints[i].X = float64((i + 1) * 50)
+		insertionSortPoints[i].X = float64(i + i)
 		insertionSortPoints[i].Y = float64(time.Since(start).Nanoseconds())
 
 		// Merge sort
 		start = time.Now()
 		mergeSort.Sort(nums)
-		mergeSortPoints[i].X = float64((i + 1) * 50)
+		mergeSortPoints[i].X = float64(i + 1)
 		mergeSortPoints[i].Y = float64(time.Since(start).Nanoseconds())
 	}
 
