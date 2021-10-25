@@ -55,7 +55,6 @@ func Explore(g *Graph, s *Node) {
 	// Add start node
 	q <- s
 
-	loop:
 	for {
 		select {
 		// Dequeue node n
@@ -77,7 +76,7 @@ func Explore(g *Graph, s *Node) {
 			}
 		// Otherwise, no nodes to dequeue so we can exit
 		default:
-			break loop
+			return
 		}
 	}
 }
